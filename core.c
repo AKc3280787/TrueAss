@@ -36,10 +36,12 @@ int attack2(void)   //function proto to attack scram cyph
 
 int main ()
 {
-    int sel, key;
+    int sel, key, tmp;
     
     /* open file in */
+   FILE *Fopen(const char *in.txt, const char 'r');
     /* open file out*/
+   FILE *Fopen(const char *out.txt, const char 'r+');
     /* read file for required function */
     /* go to proper function */
     /* function1, encypt stuff */
