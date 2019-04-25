@@ -29,19 +29,22 @@
 */
 #include <stdio.h>
 
-int encypt(void)    //function proto to encypt messages
-int decypt(void)    //function proto to decypt messages
-int attack1(void)   //function proto to attack shift cyph
-int attack2(void)   //function proto to attack scram cyph
+//int encypt(void)    //function proto to encypt messages
+//int decypt(void)    //function proto to decypt messages
+//int attack1(void)   //function proto to attack shift cyph
+//int attack2(void)   //function proto to attack scram cyph
 
 int main ()
 {
+    FILE *fin;
+    FILE *fout;
     int sel, key, tmp;
     
     /* open file in */
-   FILE *Fopen(const char *in.txt, const char 'r');
+   fin = fopen("in.txt", "r");
+   fscanf(fin, "%d", &key);
+   printf("%d", key);
     /* open file out*/
-   FILE *Fopen(const char *out.txt, const char 'r+');
     /* read file for required function */
     /* go to proper function */
     /* function1, encypt stuff */
