@@ -42,9 +42,11 @@ int main ()
     
     /* open file in */
    fin = fopen("in.txt", "r");
-   fscanf(fin, "%d", &key);
-   printf("%d", key);
+   fscanf(fin, "%d", &sel);
+   printf("%d", sel);
     /* open file out*/
+   fout = fopen("out.txt", "w");
+   fprintf(fout, "You have selected function %d", sel);
     /* read file for required function */
     /* go to proper function */
     /* function1, encypt stuff */
