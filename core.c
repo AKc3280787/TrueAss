@@ -82,17 +82,25 @@ int main ()
 int ecsh(int key)
 {
     char r, w, tmp;
+    char array[1024];
     fin = fopen("in.txt", "r");
     fout = fopen("out.txt", "a");
 
     
     while( EOF != 0 )
     {
+        if (w == r)
+        {
+            return 0;
+        }
+        else
+        {
         fscanf(fin, "%c", &r);
-        w = r;
-        fprintf(fout, "%c", w);
-               
+        array[n++] = r;
+        fprintf(fout, "%c", w);   
+        }            
     }
+    
     
     return 0;
 }
