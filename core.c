@@ -29,16 +29,14 @@
 */
 #include <stdio.h>
 
-//int encypt(int key)    //function proto to encypt messages
-//int decypt(void)    //function proto to decypt messages
-//int attack1(void)   //function proto to attack shift cyph
-//int attack2(void)   //function proto to attack scram cyph
+//int ecsh(int key)    //function proto to encypt messages
+//int dcsh(int key)    //function proto to decypt messages
 
 int main ()
 {
     FILE *fin;
     FILE *fout;
-    int sel, key, tmp;
+    int sel, key;
     
     /* open file in */
    fin = fopen("in.txt", "r");
@@ -74,19 +72,12 @@ int main ()
        //this will be the attack function for the sub
        break
    }
-    /* go to proper function */
-    /* function1, encypt stuff */
-        /* while loop until the end of file */
-        /*  read file for letter
-            rotate the letter by the key
-            check if it is in the ASCII limits
-            if not then call a fix function
-            else continue
-            store the result into an array
-            repeat the while loop
-        */
-    /* Print the array to an out file */
-    
+
+    return 0;
+}
+
+int ecsh(int key)
+{
     
     
     return 0;
