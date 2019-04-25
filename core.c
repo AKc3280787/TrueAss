@@ -27,3 +27,12 @@
                 >The sub key will be a string of 26 letters
                 >If the letter is a lower case then subtract 32
 */
+#include <stdio.h>
+int main ()
+{
+    
+    
+    
+    
+    return 0;
+}
