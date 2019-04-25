@@ -28,6 +28,12 @@
                 >If the letter is a lower case then subtract 32
 */
 #include <stdio.h>
+
+int encypt(void)    //function proto to encypt messages
+int decypt(void)    //function proto to decypt messages
+int attack1(void)   //function proto to attack shift cyph
+int attack2(void)   //function proto to attack scram cyph
+
 int main ()
 {
     
