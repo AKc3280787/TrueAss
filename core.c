@@ -36,7 +36,23 @@ int attack2(void)   //function proto to attack scram cyph
 
 int main ()
 {
+    int sel, key;
     
+    /* open file in */
+    /* open file out*/
+    /* read file for required function */
+    /* go to proper function */
+    /* function1, encypt stuff */
+        /* while loop until the end of file */
+        /*  read file for letter
+            rotate the letter by the key
+            check if it is in the ASCII limits
+            if not then call a fix function
+            else continue
+            store the result into an array
+            repeat the while loop
+        */
+    /* Print the array to an out file */
     
     
     
