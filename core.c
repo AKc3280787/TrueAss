@@ -16,4 +16,10 @@
                  on line one for the option that will be done
                  the second line will contain the key given as
                  an int. The third line will be the message.
-                >*/
+                
+                >What should be done with the white spaces?
+                >What if the message includes numerals?
+                >Should upper and lowercase be handled diffrently?
+                >Do not encypt grammar, spaces or numbers.
+                >All the message will be in ASCII uppercase.
+                */
