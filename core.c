@@ -78,7 +78,15 @@ int main ()
 
 int ecsh(int key)
 {
+    char r, w, tmp;
     
+    while( EOF > 0 )
+    {
+        fscanf(fin, "%c", &r);
+        w = r;
+        fprintf(fout, "%c", w);\
+        
+    }
     
     return 0;
 }
