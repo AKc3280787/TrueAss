@@ -29,7 +29,7 @@
 */
 #include <stdio.h>
 
-//int encypt(void)    //function proto to encypt messages
+//int encypt(int key)    //function proto to encypt messages
 //int decypt(void)    //function proto to decypt messages
 //int attack1(void)   //function proto to attack shift cyph
 //int attack2(void)   //function proto to attack scram cyph
@@ -46,8 +46,34 @@ int main ()
    printf("%d", sel);
     /* open file out*/
    fout = fopen("out.txt", "w");
-   fprintf(fout, "You have selected function %d", sel);
-    /* read file for required function */
+   fprintf(fout, "You have selected function %d\n", sel);
+   
+   switch(sel)
+   {
+       case 1:
+       //this will be the encypt function
+       break
+       
+       case 2:
+       //this will be the decypt function
+       break
+       
+       case 3:
+       //this will be the encypt with the sub function
+       break
+       
+       case 4:
+       //this will be the decypt with the sub function
+       break
+       
+       case 5:
+       //this will be the attack funtion for the shift
+       break
+       
+       case 6:
+       //this will be the attack function for the sub
+       break
+   }
     /* go to proper function */
     /* function1, encypt stuff */
         /* while loop until the end of file */
