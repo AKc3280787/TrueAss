@@ -8,4 +8,12 @@
     5. Decypt a message that is encypted with rotation cypher
        without the key. AKA Break the code.
     6. Do the same with 5 but with a sub encyption.
-    */
+*/
+/*  Things to know:
+                >Each task should be done by a FUNCTION
+                >The user input will be taken from a file
+                >The file will be formated as a single int
+                 on line one for the option that will be done
+                 the second line will contain the key given as
+                 an int. The third line will be the message.
+                >*/
