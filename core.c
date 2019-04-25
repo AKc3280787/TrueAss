@@ -28,49 +28,52 @@
                 >If the letter is a lower case then subtract 32
 */
 #include <stdio.h>
+FILE *fin;
+FILE *fout;
 
-//int ecsh(int key)    //function proto to encypt messages
+
+int ecsh(int key);    //function proto to encypt messages
 //int dcsh(int key)    //function proto to decypt messages
 
 int main ()
 {
-    FILE *fin;
-    FILE *fout;
-    int sel, key;
+    int sel, key, tmp;
+    
     
     /* open file in */
    fin = fopen("in.txt", "r");
    fscanf(fin, "%d", &sel);
    printf("%d", sel);
     /* open file out*/
-   fout = fopen("out.txt", "w");
+   fout = fopen("out.txt", "w+");
    fprintf(fout, "You have selected function %d\n", sel);
+   
    
    switch(sel)
    {
        case 1:
-       //this will be the encypt function
-       break
+       tmp = ecsh(key);
+       break;
        
        case 2:
        //this will be the decypt function
-       break
+       break;
        
        case 3:
        //this will be the encypt with the sub function
-       break
+       break;
        
        case 4:
        //this will be the decypt with the sub function
-       break
+       break;
        
        case 5:
        //this will be the attack funtion for the shift
-       break
+       break;
        
        case 6:
        //this will be the attack function for the sub
-       break
+       break;
    }
 
     return 0;
@@ -79,13 +82,16 @@ int main ()
 int ecsh(int key)
 {
     char r, w, tmp;
+    fin = fopen("in.txt", "r");
+    fout = fopen("out.txt", "a");
+
     
-    while( EOF > 0 )
+    while( EOF != 0 )
     {
         fscanf(fin, "%c", &r);
         w = r;
-        fprintf(fout, "%c", w);\
-        
+        fprintf(fout, "%c", w);
+               
     }
     
     return 0;
