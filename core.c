@@ -78,18 +78,18 @@ int main ()
 int ecsh(int key)
 {
     char r, w;
-    char array[300];
+    char array[140];
     int n;
     n = 0;
     w = 0;
     r = 1;
     fin = fopen("in.txt", "r");
-    fout = fopen("out.txt", "wb");
+    fout = fopen("out.txt", "w+");
 
     
     while( EOF != 0 )
     {
-        if (n == 300)
+        if (n == 140)
         {
             fwrite(array, sizeof(char), sizeof (array), fout);
             fclose(fout);
@@ -97,10 +97,18 @@ int ecsh(int key)
             return 0;
         }
         else
-        {
-        fscanf(fin, "%c", &r);
-        char w = r;
-        array[n++] = w;  
+            {
+                    
+                fscanf(fin, "%c", &r);
+                if (r >= 65 && r <= 90)
+                    {
+                        char w = r + key;
+                        array[n++] = w;            
+                    }
+                else
+                    {
+                        array[n++] = w;
+                    }
         }            
     }
     
