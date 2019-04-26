@@ -115,6 +115,7 @@ int ecsh(int key)
                                 {
                                     tmp = p - 90;
                                     p = 64 + tmp;
+                                    array[n++] = p;
                                 }
                                 else
                                 {
