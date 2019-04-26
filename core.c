@@ -128,5 +128,13 @@ int cap(char r)
 {
     char tmp0;
     tmp0 = r - 32;
-    return tmp0;
+    if (tmp0 >= 91 && tmp0 <= 96)
+    {
+        tmp0 = tmp0 - 6;
+        return tmp0;
+    }
+    else
+    {
+        return tmp0;
+    }
 }
