@@ -89,13 +89,13 @@ int ecsh(int key)
         if (w == r)
         {
             fwrite(array, sizeof(char), sizeof (array), fout); 
-            
+        
             return 0;
         }
         else
         {
         fscanf(fin, "%c", &r);
-        w = r - key;
+        w = r + key;
         array[n++] = w;  
         }            
     }
