@@ -43,6 +43,7 @@ int main ()
     /* open file in */
    fin = fopen("in.txt", "r");
    fscanf(fin, "%d", &sel);
+   fscanf(fin, "%d", &key);
      
    switch(sel)
    {
@@ -80,6 +81,7 @@ int ecsh(int key)
     char array[300];
     int n;
     n = 0;
+    w = 0;
     fin = fopen("in.txt", "r");
     fout = fopen("out.txt", "w");
 
@@ -96,7 +98,7 @@ int ecsh(int key)
         else
         {
         fscanf(fin, "%c", &r);
-        w = r + key;
+        char w = 'r' + key;
         array[n++] = w;  
         }            
     }
