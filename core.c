@@ -77,11 +77,11 @@ int main ()
 /* -------------------------------------------------------------- */
 int ecsh(int key)
 {
-    char r, w, t;
+    char r, p, t;
     char array[140];
     int n;
     n = 0;
-    w = 0;
+    p = 0;
     r = 1;
     fin = fopen("in.txt", "r");
 
@@ -102,20 +102,20 @@ int ecsh(int key)
                 fscanf(fin, "%c", &r);
                 if (r >= 65 && r <= 90)
                     {
-                        char w = r + key;
-                        array[n++] = w;            
+                        char p = r + key;
+                        array[n++] = p;            
                     }
                 else
                     {
                         if (r >= 97 && r <= 122)
                             {
                                 t = cap(r);
-                                char w = t + key;
-                                array[n++] = w;
+                                char p = t + key;
+                                array[n++] = p;
                             }
                         else
                             {
-                                array[n++] = w;
+                                array[n++] = p;
                             }
                         
                     }
@@ -128,9 +128,9 @@ int cap(char r)
 {
     char tmp0;
     tmp0 = r - 32;
-    if (tmp0 >= 91 && tmp0 <= 96)
+    if (tmp0 > 91 && tmp0 < 96)
     {
-        tmp0 = tmp0 - 6;
+        tmp0 = tmp0 - 10;
         return tmp0;
     }
     else
