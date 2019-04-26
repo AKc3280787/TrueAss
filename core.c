@@ -21,19 +21,19 @@
                 >Should upper and lowercase be handled diffrently?  |
                 >Do not encypt grammar, spaces or numbers.          |
                 >All the message will be in ASCII uppercase.        |
-                
-                >Key format will be from the set of [0,25]
-                >The sub key will be a string of 26 letters
-                >If the letter is a lower case then subtract 32
-*/
+                                                                    |
+                >Key format will be from the set of [0,25]          |
+                >The sub key will be a string of 26 letters         |
+                >If the letter is a lower case then subtract 32     |
+                                                                  */
 #include <stdio.h>
 FILE *fin;
 FILE *fout;
 
 
-int ecsh(int key);    //function proto to encypt messages
-int cap(char r);        //function that capitlizes letters if they are lowercase.
-//int dcsh(int key)    //function proto to decypt messages
+int ecsh(int key);  //function proto to encypt messages
+int cap(char r);    //function that capitlizes letters if they are lowercase.
+int dcsh(int key)   //function proto to decypt messages
 
 int main ()
 {
@@ -129,8 +129,6 @@ int ecsh(int key)
         }
     }
 }
-
-
 /* -------------------------------------------------------------- */
 int cap(char r)
 {
@@ -139,3 +137,4 @@ int cap(char r)
     return tmp0;
     
 }
+/* -------------------------------------------------------------- */
