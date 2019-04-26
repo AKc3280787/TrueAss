@@ -107,7 +107,17 @@ int ecsh(int key)
                     }
                 else
                     {
-                        array[n++] = w;
+                        if (r >= 97 && r <= 122)
+                            {
+                                tmp = r -32;
+                                char w = temp + key;
+                                array[n++] = w;
+                            }
+                        else
+                            {
+                                array[n++] = w;
+                            }
+                        
                     }
         }            
     }
