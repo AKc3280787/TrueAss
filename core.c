@@ -43,12 +43,7 @@ int main ()
     /* open file in */
    fin = fopen("in.txt", "r");
    fscanf(fin, "%d", &sel);
-   printf("%d", sel);
-    /* open file out*/
-   fout = fopen("out.txt", "w+");
-   fprintf(fout, "You have selected function %d\n", sel);
-   
-   
+     
    switch(sel)
    {
        case 1:
@@ -82,22 +77,26 @@ int main ()
 int ecsh(int key)
 {
     char r, w, tmp;
-    char array[1024];
+    char array[300];
+    int n;
+    n = 0;
     fin = fopen("in.txt", "r");
-    fout = fopen("out.txt", "a");
+    fout = fopen("out.txt", "w");
 
     
     while( EOF != 0 )
     {
         if (w == r)
         {
+            fwrite(array, sizeof(char), sizeof (array), fout); 
+            
             return 0;
         }
         else
         {
         fscanf(fin, "%c", &r);
-        array[n++] = r;
-        fprintf(fout, "%c", w);   
+        w = r - key;
+        array[n++] = w;  
         }            
     }
     
