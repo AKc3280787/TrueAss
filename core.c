@@ -79,7 +79,7 @@ int ecsh(int key)
 {
     char r, p, t;
     char array[140];
-    int n;
+    int n, tmp;
     n = 0;
     p = 0;
     r = 1;
@@ -97,44 +97,45 @@ int ecsh(int key)
             return 0;
         }
         else
-            {
+        {
                     
                 fscanf(fin, "%c", &r);
                 if (r >= 65 && r <= 90)
-                    {
+                {
                         char p = r + key;
                         array[n++] = p;            
-                    }
+                }
                 else
-                    {
+                {
                         if (r >= 97 && r <= 122)
-                            {
+                        {
                                 t = cap(r);
                                 char p = t + key;
-                                array[n++] = p;
-                            }
+                                if ( p >= 91)
+                                {
+                                    tmp = p - 90;
+                                    p = 64 + tmp
+                                }
+                                else
+                                {
+                                    array[n++] = p;
+                                }
+                        }
                         else
-                            {
-                                array[n++] = p;
-                            }
-                        
-                    }
-        }            
+                        {
+                            array[n++] = p;
+                        }
+                }
+        }
     }
 }
+
 
 /* -------------------------------------------------------------- */
 int cap(char r)
 {
     char tmp0;
     tmp0 = r - 32;
-    if (tmp0 > 91 && tmp0 < 96)
-    {
-        tmp0 = tmp0 - 10;
-        return tmp0;
-    }
-    else
-    {
-        return tmp0;
-    }
+    return tmp0;
+    
 }
