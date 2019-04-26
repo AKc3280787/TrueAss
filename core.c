@@ -77,18 +77,19 @@ int main ()
 /* -------------------------------------------------------------- */
 int ecsh(int key)
 {
-    char r, w, tmp;
+    char r, w;
     char array[300];
     int n;
     n = 0;
     w = 0;
+    r = 1;
     fin = fopen("in.txt", "r");
-    fout = fopen("out.txt", "w");
+    fout = fopen("out.txt", "wb");
 
     
     while( EOF != 0 )
     {
-        if (w == r)
+        if (n == 300)
         {
             fwrite(array, sizeof(char), sizeof (array), fout);
             fclose(fout);
@@ -98,7 +99,7 @@ int ecsh(int key)
         else
         {
         fscanf(fin, "%c", &r);
-        char w = 'r' + key;
+        char w = r;
         array[n++] = w;  
         }            
     }
