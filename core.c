@@ -73,7 +73,7 @@ int main ()
 
     return 0;
 }
-
+/* -------------------------------------------------------------- */
 int ecsh(int key)
 {
     char r, w, tmp;
@@ -88,7 +88,8 @@ int ecsh(int key)
     {
         if (w == r)
         {
-            fwrite(array, sizeof(char), sizeof (array), fout); 
+            fwrite(array, sizeof(char), sizeof (array), fout);
+            fclose(fout);
         
             return 0;
         }
