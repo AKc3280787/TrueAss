@@ -1,4 +1,4 @@
-/*  Current goals of this program as specified by the document      |
+//*  Current goals of this program as specified by the document      |
     is as follows:                                                  |
     1. Encypt a message with a function using a key from a file     |
        which will also be written to a file.                        |
@@ -33,6 +33,7 @@ FILE *fout;
 
 
 int ecsh(int key);    //function proto to encypt messages
+int cap(char r);        //function that capitlizes letters if they are lowercase.
 //int dcsh(int key)    //function proto to decypt messages
 
 int main ()
@@ -121,7 +122,12 @@ int ecsh(int key)
                     }
         }            
     }
-    
-    
+/* -------------------------------------------------------------- */
+int cap(char r)
+{
+    char tmpcap;
+    tmpcap = r - 32;
+    return r;
+}   
     return 0;
 }
