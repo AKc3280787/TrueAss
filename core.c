@@ -77,7 +77,7 @@ int main ()
 /* -------------------------------------------------------------- */
 int ecsh(int key)
 {
-    char r, w;
+    char r, w, t;
     char array[140];
     int n;
     n = 0;
@@ -109,8 +109,8 @@ int ecsh(int key)
                     {
                         if (r >= 97 && r <= 122)
                             {
-                                tmp = r -32;
-                                char w = temp + key;
+                                t = r -32;
+                                char w = t + key;
                                 array[n++] = w;
                             }
                         else
