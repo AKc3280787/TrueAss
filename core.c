@@ -114,7 +114,7 @@ int ecsh(int key)
                                 if ( p >= 91)
                                 {
                                     tmp = p - 90;
-                                    p = 64 + tmp
+                                    p = 64 + tmp;
                                 }
                                 else
                                 {
