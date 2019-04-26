@@ -1,4 +1,4 @@
-//*  Current goals of this program as specified by the document      |
+/*  Current goals of this program as specified by the document      |
     is as follows:                                                  |
     1. Encypt a message with a function using a key from a file     |
        which will also be written to a file.                        |
@@ -7,8 +7,7 @@
     4. do the reverse of 3.                                         |
     5. Decypt a message that is encypted with rotation cypher       |
        without the key. AKA Break the code.                         |
-    6. Do the same with 5 but with a sub encyption.                 |
-*/
+    6. Do the same with 5 but with a sub encyption.                */
 /*  Things to know:                                                 |
                 >Each task should be done by a FUNCTION             |
                 >The user input will be taken from a file           |
@@ -85,13 +84,13 @@ int ecsh(int key)
     w = 0;
     r = 1;
     fin = fopen("in.txt", "r");
-    fout = fopen("out.txt", "w+");
 
     
     while( EOF != 0 )
     {
         if (n == 140)
         {
+            fout = fopen("out.txt", "w");
             fwrite(array, sizeof(char), sizeof (array), fout);
             fclose(fout);
         
@@ -110,7 +109,7 @@ int ecsh(int key)
                     {
                         if (r >= 97 && r <= 122)
                             {
-                                t = r -32;
+                                t = cap(r);
                                 char w = t + key;
                                 array[n++] = w;
                             }
@@ -122,12 +121,12 @@ int ecsh(int key)
                     }
         }            
     }
+}
+
 /* -------------------------------------------------------------- */
 int cap(char r)
 {
-    char tmpcap;
-    tmpcap = r - 32;
-    return r;
-}   
-    return 0;
+    char tmp0;
+    tmp0 = r - 32;
+    return tmp0;
 }
