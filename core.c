@@ -33,7 +33,7 @@ FILE *fout;
 
 int ecsh(int key);  //function proto to encypt messages
 int cap(char r);    //function that capitlizes letters if they are lowercase.
-int dcsh(int key)   //function proto to decypt messages
+int dcsh(int key);   //function proto to decypt messages
 
 int main ()
 {
@@ -53,6 +53,7 @@ int main ()
        
        case 2:
        //this will be the decypt function
+       tmp = dcsh(key);
        break;
        
        case 3:
@@ -138,3 +139,57 @@ int cap(char r)
     
 }
 /* -------------------------------------------------------------- */
+int dcsh(int key)
+{
+    char r, p, t;
+    char array[140];
+    int n, tmp;
+    n = 0;
+    p = 0;
+    r = 1;
+    fin = fopen("in.txt", "r");
+
+    
+    while( EOF != 0 )
+    {
+        if (n == 140)
+        {
+            fout = fopen("out.txt", "w");
+            fwrite(array, sizeof(char), sizeof (array), fout);
+            fclose(fout);
+        
+            return 0;
+        }
+        else
+        {
+            fscanf(fin, "%c", &r);
+            if (r >= 65 && r <= 90)
+            {
+                char p = r - key;
+                array[n++] = p;            
+            }
+            else
+            {
+                if (r >= 97 && r <= 122)
+                {
+                    t = cap(r);
+                    char p = t - key;
+                    if ( p <= 65 )
+                    {
+                        tmp = p + 64;
+                        p = 91 - tmp;
+                        array[n++] = p;
+                    }
+                    else
+                    {
+                        array[n++] = p;
+                    }
+                }
+                else
+                {
+                    array[n++] = p;
+                }
+            }
+        }
+    }
+}
