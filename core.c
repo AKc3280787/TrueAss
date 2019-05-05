@@ -106,7 +106,16 @@ int ecsh(int key)
             if (r >= 65 && r <= 90)
             {
                 char p = r + key;
-                array[n++] = p;            
+                if (p >= 91)
+                {
+                    tmp = wrapA(p);
+                    array[n++] = tmp;
+                }
+                else
+                {
+                    array[n++] = p;
+                }
+
             }
             else
             {
@@ -116,15 +125,14 @@ int ecsh(int key)
                     char p = t + key;
                     if ( p >= 91)
                     {
-                        tmp = p - 90;
-                        p = 64 + tmp;
-                        array[n++] = p;
+                        tmp = wrapA(p);
+                        array[n++] = tmp;
                     }
                     else
                     {
                         array[n++] = p;
                     }
-                }
+                 }
                 else
                 {
                     array[n++] = p;
