@@ -60,7 +60,7 @@ int main ()
        break;
        
        case 3:
-       //this will be the encypt with the sub function
+       ecsub();
        break;
        
        case 4:
@@ -233,7 +233,7 @@ int wrapA(char p) //function will wrap the keyed character from A up to Z
 /* -------------------------------------------------------------- */
 int ecsub(void)
 {
-    /*   Fundamental Idea behind what I am going to do
+/*      Fundamental Idea behind what I am going to do
     My understanding of 2d arrays is that they form a table like so:
     enc[2][26];
     enc:
@@ -247,6 +247,49 @@ int ecsub(void)
     and match it with the corrosponding number to get the right character!
     
     Just searching it might be alot of code, which Idk if I can shorten.
+*/
+    char enc[2][26];    //table that will be searched.
+  //  char out[240];      //array that will be printed to file.
+  //  int x, y, tmp, n1, n2, c;
+    int c, tmp;
+    c = 0;
+    char a, r;
     
-    */
+    a = 65;
+    
+    fin = fopen("in.txt", "r");     //opening the input file to be read from.
+    fout = fopen("out.txt", "w");   //opening the output file to write to.
+    
+    for(c = 0; c <= 26; c++)
+    {
+       tmp = a + c;
+       enc[0][c] = tmp;
+    }
+    //    fwrite(enc, sizeof(char), 26, fout);
+    
+    while (1)   //creating a never ending while loop as feof does not work here
+    {
+        if ( feof(fin) ) //feof works here so it will lead to a break for now.
+        {
+            fwrite(enc, sizeof(char), sizeof(enc), fout);
+            break;
+        }
+        else
+        {
+            for (c = 0; c <= 25; c++)
+            {
+                fscanf(fin, "%c", &r);
+                if (r <= 64 && r >= 91)
+                {
+                    c = c - 1;
+                }
+                else
+                {
+                    enc[1][c] = r;
+                }
+            }
+        }
+    }
+    
+    return 0;
 }
