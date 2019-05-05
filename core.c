@@ -177,7 +177,15 @@ int dcsh(int key)
             if (r >= 65 && r <= 90)
             {
                 char p = r - key;
-                array[n++] = p;            
+                if (p <= 64)
+                {
+                    tmp = wrapZ(p);
+                    array[n++] = tmp;
+                }
+                else
+                {
+                    array[n++] = p;
+                }        
             }
             else
             {
@@ -185,11 +193,10 @@ int dcsh(int key)
                 {
                     t = cap(r);
                     char p = t - key;
-                    if ( p <= 65 )
+                    if ( p <= 64 )
                     {
-                        tmp = p + 64;
-                        p = 91 - tmp;
-                        array[n++] = p;
+                        tmp = wrapZ(p);
+                        array[n++] = tmp;
                     }
                     else
                     {
@@ -210,7 +217,7 @@ int wrapZ(char p) //function will wrap the keyed character from Z down to A
     int tmp, r;
     
     tmp = 90 - p;
-    r = 64 + tmp;
+    r = 40 + tmp;
     
     return (r);
 }
