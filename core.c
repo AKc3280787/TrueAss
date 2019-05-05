@@ -33,9 +33,9 @@ FILE *fout;
 
 int ecsh(int key);  //function proto to encypt messages
 int cap(char r);    //function that capitlizes letters if they are lowercase.
-int dcsh(int key);   //function proto to decypt messages
+int dcsh(int key);  //function proto to decypt messages
 int wrapZ(char p);  //function that will take a charcter after the key has been subtracted and wrap it up back to z area
-int wrapA(int p);  //function that will take a character after the key has been added and wrap it up back to A area
+int wrapA(char p);  //function that will take a character after the key has been added and wrap it up back to A area
 
 
 int main ()
@@ -202,6 +202,15 @@ int wrapZ(char p) //function will wrap the keyed character from Z down to A
     int tmp, r;
     
     tmp = 90 - p;
+    r = 64 + tmp;
+    
+    return (r);
+}
+/* -------------------------------------------------------------- */
+int wrapA(char p) //function will wrap the keyed character from A up to Z
+{
+    int tmp, r;
+    tmp = p - 90;
     r = 64 + tmp;
     
     return (r);
