@@ -411,3 +411,34 @@ int main(void){
     return 0;
     
 }
+
+shift encypt WIP
+
+#include <stdio.h>
+
+int main(void){
+    FILE *fin;
+    FILE *fout;
+    int i = 0, tmp, key;
+    char r, tmpC;
+    
+    fin = fopen("in.txt", "r");
+    fout = fopen("out.txt", "a+");
+    fscanf(fin, "%d\n", &tmp);                                  //takes the "selection" number and throws it
+    fscanf(fin, "%d\n", &key);                                  //takes the key from the input file
+    
+    while (1) {
+        r = fgetc(fin);
+        if (feof(fin)) {
+            break;
+        }
+        else if (r => 97 && r <= 122) {
+            tmpC = r - 32;
+            r = tmpC
+        }
+        if ()
+    }
+    
+
+    return 0;
+}
