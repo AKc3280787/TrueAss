@@ -303,7 +303,7 @@ int main(void){
     FILE *fin;
     FILE *fout;
     char key[2][26], tmpC = 0, a = 65;                           //to store the alphabet in one row and the key in the next.
-    int rT = 0, cT = 0, i = 0, tmp;                              //rt for the row in table / colum in table / i for counter / tmp for throw away.
+    int i = 0, tmp;                                             //rt for the row in table / colum in table / i for counter / tmp for throw away.
     char r;
     
     fin = fopen("in.txt", "r");
