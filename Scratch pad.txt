@@ -293,3 +293,37 @@ int ecsub(void)
     
     return 0;
 }
+
+
+
+
+#include <stdio.h>
+
+int main(void){
+    FILE *fin;
+    FILE *fout;
+    char key[2][26], tmpC = 0;                                 //to store the alphabet in one row and the key in the next.
+    int rT = 0, cT = 0, i = 0, tmp;                            //rt for the row in table / colum in table / i for counter / tmp for throw away.
+    char r;
+    
+    fin = fopen("in.txt", "r");
+    fout = fopen("out.txt", "a+");
+    fscanf(fin, "%d\n", &tmp);                                 //takes the "selection" number and throws it
+    
+    tmp = 0;
+    for(i = 0; i <= 25; i++) {                                 //fills the first row with ABC... to Z
+       tmpC = a + c;
+       key[0][i] = tmpC;
+    }
+    
+    for (i = 0; i<=25; i++) {                                  //loop will read the key and assign it to row 2 to be called
+        fscanf(fin, "%c", &key[1][i]);       
+    }
+    
+    fwrite(key, sizeof(char), sizeof(key), fout);
+    fclose(fin);
+    fclose(fout)
+    
+    return 0;
+    
+}
