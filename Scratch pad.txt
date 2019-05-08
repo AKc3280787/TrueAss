@@ -295,7 +295,7 @@ int ecsub(void)
 }
 
 
-
+ENCRYPT
 
 #include <stdio.h>
 
@@ -318,6 +318,66 @@ int main(void){
     
     for (i = 0; i<=25; i++) {                                    //loop will read the key and assign it to row 2 to be called
         fscanf(fin, "%c", &key[1][i]);       
+    }
+    
+    for (i = 0; i <=25; i++) {                                  //loop will print the alphabet to the file
+        fprintf(fout, "%c", key[0][i]);
+    }
+    fprintf(fout,"\n%s\n", "--------------------------");       //will take a new line and add ascii art
+    for (i = 0; i <=25; i++) {                                  //will print the read key
+        fprintf(fout, "%c", key[1][i]);
+    }
+    fprintf(fout, "\n%s\n", " ");
+   while (1) {                                                  //starting a loop to break if EOF is reached
+        i = 0;
+        r = fgetc(fin);                                         //Reading the file chracter to encypt
+        if ( feof(fin) ) {                                      //if EOF break operations
+            break;
+        }
+        if (r >= 65 && r <= 90) {
+            while (r != key[0][i] && i < 25) {                  //if the characters DO NOT match then it will move onto the next OR while i <= 25
+                i++;
+            }
+            fprintf(fout, "%c", key[1][i]);
+        }
+        else {
+            fprintf(fout, "%c", r);
+        }
+    }
+    fprintf(fout, "\n");
+    fclose(fin);
+    fclose(fout);
+    
+    return 0;
+    
+}
+
+
+
+
+DECRYPT
+
+#include <stdio.h>
+
+int main(void){
+    FILE *fin;
+    FILE *fout;
+    char key[2][26], tmpC = 0, a = 65;                           //to store the alphabet in one row and the key in the next.
+    int i = 0, tmp;                                             //rt for the row in table / colum in table / i for counter / tmp for throw away.
+    char r;
+    
+    fin = fopen("in.txt", "r");
+    fout = fopen("out.txt", "a+");
+    fscanf(fin, "%d\n", &tmp);                                   //takes the "selection" number and throws it
+    
+    tmp = 0;
+    for(i = 0; i <= 25; i++) {                                   //fills the first row with ABC... to Z
+       tmpC = a + i;
+       key[1][i] = tmpC;
+    }
+    
+    for (i = 0; i<=25; i++) {                                    //loop will read the key and assign it to row 2 to be called
+        fscanf(fin, "%c", &key[0][i]);       
     }
     
     for (i = 0; i <=25; i++) {                                  //loop will print the alphabet to the file
